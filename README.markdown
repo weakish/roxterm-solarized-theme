@@ -17,6 +17,6 @@ Copy solatarized-dark and/or solatarized-light into
 Links
 -------
 
-- Solarized Homepage: http://ethanschoonover.com/solarized
-- Solarized main repository: https://github.com/altercation/solarized/
-- repo of this theme (roxterm solarized): https://gist.github.com/FIXME
+- Solarized Homepage: <http://ethanschoonover.com/solarized>
+- Solarized main repository: <https://github.com/altercation/solarized/>
+- repo of this theme (roxterm solarized): <https://gist.github.com/923039>
