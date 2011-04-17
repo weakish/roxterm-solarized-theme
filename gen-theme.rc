@@ -1,0 +1,72 @@
+#!/usr/bin/env rc
+# by Jakukyo Friel <weakish@gmail.com> under GPL v2.
+
+# Generate Solarized dark theme for roxterm.
+# Works with both plan9 rc (plan9 unix port)
+# and Byron Rakitzis' reimplementation.
+# Tested with GNU grep/sed.
+#
+# Usage:
+# Run it under the root of the solarized main repo.
+# (At least make sure solarized README.md is under the current dir.)
+#
+#     solarized% /path/to/gen_theme.rc > solarized-dark
+#
+# If you'd like to generate a light theme, alter the value of
+# foreground, background and cursor (directly edit this script
+# or edit the theme file afterwards).
+
+
+fn gen_color_values {
+  cat README.md |
+# extract the table
+  sed -n '/    SOLARIZED HEX/,/Usage & Development/p' |
+  sed -n '/    base03/,/    green/p' |
+# extract required fields
+  grep -oE '^    [a-z0-9]+[ ]+#[0-9a-f]{6}[ ]+[0-9]{1,2}/' 
+}
+
+# #abcdef -> #aabbccddeeff
+fn convert_hex {
+  sed -r 's/#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/#\1\1\2\2\3\3/'
+}
+
+fn extract_color_value {
+  gen_color_values |
+# Use $1^' ' to distinguish among base0/base01/base02/base03, etc.
+  grep $1^' ' | grep -oE '#[^ ]+' | convert_hex
+}
+
+fn gen_header {
+  echo '[roxterm colour scheme]'
+  echo 'foreground='^`{extract_color_value base0}
+  echo 'background='^`{extract_color_value base03}
+}
+
+fn gen_colormap {
+  gen_color_values |
+  grep -oE '#[^/]+' |
+# sort from 0 to 15
+  sort -nk 2 |
+# '#073642 0' -> '0=#070736364242'
+  sed -r 's/(#[^ ]+)[ ]+([0-9]{1,2})/\2=\1/' | convert_hex
+}
+
+fn gen_footer {
+# Default colors specified by roxterm.
+cat <<END
+16=#4c4c4c4c4c4c
+17=#a8a830303030
+18=#202088882020
+19=#a8a888880000
+20=#555555559898
+21=#888830308888
+22=#303088888888
+23=#d8d8d8d8d8d8
+END
+  echo 'cursor='^`{extract_color_value base1}
+  echo 'palette_size=16'
+}
+
+# main
+gen_header && gen_colormap && gen_footer
