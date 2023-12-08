@@ -38,7 +38,7 @@ Then I copied the dark theme file and edited it manually to
 produce the light theme file.
 (Since there are only few differences, I don't bother to alter
 my script to generate both themes.
-Improvenments are always welcome, though.)
+Improvements are always welcome, though.)
 
 I preferred that you fork/clone [this repo][repo] and send me a pull request (opening up an [issue][main-its] and mention me '@weakish').
 
