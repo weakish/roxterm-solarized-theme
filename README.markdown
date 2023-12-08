@@ -11,14 +11,14 @@ Description
 Install
 ---------
 
-Copy solatarized-dark and/or solatarized-light into 
+Copy solarized-dark and/or solarized-light into 
 `~/.config/roxterm.sourceforge.net/Colours/`.
 
 Issue tracking
 --------------
 
 This repo does not have a separate issue tracking system.
-Please report issue to [solatarized main repo][main-its].
+Please report issue to [solarized main repo][main-its].
 (You may mention me '@weakish' when reporting an issue.)
 
 [main-its]: https://github.com/altercation/solarized/issues
