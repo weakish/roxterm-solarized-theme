@@ -40,7 +40,7 @@ produce the light theme file.
 my script to generate both themes.
 Improvements are always welcome, though.)
 
-I prefer that you fork/clone [this repo][repo] and send me a pull request (opening up an [issue][main-its] and mention me '@weakish').
+I prefer that you fork/clone [this repo][repo] and send me a pull request (by opening up an [issue][main-its] and mentioning me '@weakish').
 
 [repo]: https://gist.github.com/923039
 
