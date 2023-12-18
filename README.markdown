@@ -11,7 +11,23 @@ Description
 Install
 ---------
 
-Copy solarized-dark and/or solarized-light into
+```sh
+make install
+```
+
+The Makefile is compatible with both GNU and BSD make.
+
+Alternatively, you can manually copy `solarized-dark` and/or `solarized-light` into
+`~/.config/roxterm.sourceforge.net/Colours/`.
+
+Uninstall
+---------
+
+```sh
+make uninstall
+```
+
+Alternatively, you can manually delete `solarized-dark` and/or `solarized-light` under
 `~/.config/roxterm.sourceforge.net/Colours/`.
 
 
@@ -30,6 +46,5 @@ Improvements are always welcome, though.)
 Links
 -------
 
-- Solarized Homepage: <http://ethanschoonover.com/solarized>
 - Solarized main repository: <https://github.com/altercation/solarized/>
 - repo of this theme itself: <https://github.com/weakish/roxterm-solarized-theme>
