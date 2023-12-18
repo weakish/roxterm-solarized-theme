@@ -48,3 +48,12 @@ Links
 
 - Solarized main repository: <https://github.com/altercation/solarized/>
 - repo of this theme itself: <https://github.com/weakish/roxterm-solarized-theme>
+
+Screenshots
+------------
+
+Screenshots of `htop` under roxterm with solarized dark and light theme.
+
+![htop under roxterm with solarized dark theme](dark.png)
+
+![htop under roxterm with solarized light theme](light.png)
