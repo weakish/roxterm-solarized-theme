@@ -17,7 +17,12 @@ user@ubuntu:~$ cat ~/.ssh/id_ed25519.pub > ~/.ssh/authorized_keys
 user@ubuntu:~$ touch ~/.Xauthority
 user@ubuntu:~$ sudo apt install openssh-server
 # change port from 22 to 2222
-user@ubuntu:~$ sudo vim /lib/systemd/system/ssh.socket
+user@ubuntu:~$ sudo mkdir -p /etc/systemd/system/ssh.socket.d/
+user@ubuntu:~$ sudo tee -a /etc/systemd/system/ssh.socket.d/listen.conf >/dev/null <<EOF
+[Socket]
+ListenStream=
+ListenStream=2222
+EOF
 user@ubuntu:~$ exit
 # restart ubuntu
 orb restart ubuntu
